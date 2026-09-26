@@ -4,7 +4,7 @@
 afro, deep and melodic house, with a live pulse. Instagram
 [@reset.info.nyc](https://www.instagram.com/reset.info.nyc/).
 
-The brand ran 2022–2023 and is being relaunched. This repo holds the brand
+The brand ran 2021–2023 and is being relaunched. This repo holds the brand
 system and, once built, the flyer and social pipeline, on the same pattern as
 the sibling [LIVE After Dark](https://github.com/resetinfonyc/Live-After-Dark-)
 repo.
