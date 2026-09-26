@@ -222,7 +222,13 @@ transparent PNG in black, white and gold, with the layered PSD. It never
 needed a redesign; the Instagram avatar buried it under an AI collage. So:
 keep it exactly, and cut it properly.
 
-Three lockups, now cut and in `LOGO/`:
+**Andre's rule, 2026-09-26: the logo is the word, the eye and the feathers
+together, and it is never cropped.** Every size in `KIT/` carries the full
+lockup, including avatars and favicons. The three-lockup idea below is kept
+as a record of what was proposed and declined; the cut files stay in `LOGO/`
+for reference only and are not to be used.
+
+Three lockups were proposed:
 
 | lockup | file | use |
 |---|---|---|

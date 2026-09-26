@@ -110,7 +110,7 @@ def save(im, rel):
     im.save(p, optimize=True); print(rel)
 
 def main():
-    if OUT.exists(): shutil.rmtree(OUT)
+    for d in OUT.glob('0*'): shutil.rmtree(d)   # keep README.md
     L = {k: render_lockup(k) for k in LOCKUPS}
     # 1. transparent masters
     for s in (4096, 2048, 1024, 512, 256):
