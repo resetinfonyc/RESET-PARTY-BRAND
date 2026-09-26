@@ -19,3 +19,11 @@ Bone is `#F2EDE8`. Ground A is `#0B0A08`, ground B is `#07090C`. See
 `../BRAND/RESET_brand_audit_and_rebrand_plan.md` section 4.
 
 Not committed: the 5316px sources and the PSD. They stay in Dropbox.
+
+## explorations/
+
+Five evolutions of the mark on the Direction A ground, rendered 2026-09-26
+after Andre explained what the mark means (eye = vision, feathers = freedom,
+RESET = reset the fear). The drawing is untouched; only colour, light and
+one line change. `RESET_avatar_lit_*` is the eye-only avatar with the iris
+lit in ember. See the brand plan, section 4, for the verdicts.

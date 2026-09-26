@@ -14,6 +14,70 @@ else is a recommendation you can overrule.
 
 ---
 
+## 0. What RESET is, in Andre's words
+
+Added 2026-09-26 after Andre told the story. This section is the brief;
+everything after it serves it.
+
+Andre is a musician first. When he started DJing, people laughed: *you, a
+DJ? never.* He kept going. Once he had rooms to fill, he built his own night
+and used it to give a stage to people the scene had turned away: DJs who
+plainly loved the music and got rejected and had no power to fight back, and
+artists who don't usually get a nightclub slot at all. Painters working live,
+a saxophone, a violin, percussion, vendors.
+
+**RESET means: reset the fear, the doubt, the uncertainty. Believe, and love
+music the way you actually feel it.**
+
+The mark carries that literally:
+
+| element | means |
+|---|---|
+| the eye | vision |
+| the feathers | freedom |
+| the word | the reset itself |
+
+So RESET is not a genre night and not a venue. It is a stage for people who
+were told no, built by someone who was told no. That is the positioning, the
+caption voice, the booking policy and the reason a live painter stands next to
+the DJ booth. It is also why the brand can move rooms: the room was never the
+point.
+
+### What this changes downstream
+
+- **Positioning (section 2):** RESET and RESET Talents are two things and stay
+  two things. RESET is the night and the mark. RESET Talents is the roster
+  and the services: the DJs and live artists Andre books, offered to other
+  venues and events. Talents is the *business consequence* of the night.
+- **The mark (section 4):** keep the original drawing. The one addition that
+  encodes the meaning is to **light the iris**: the seed of life inside the
+  eye in the accent colour, with a soft glow, so the eye is not just open but
+  switched on. Explorations are in `LOGO/explorations/`.
+- **Direction:** A, warm. A night with a saxophone and live painting is warm
+  by definition. Direction B is retired.
+- **Voice:** the After Dark rules still apply (short, certain, no hype), but
+  RESET is allowed one thing After Dark is not: a sentence about *why*.
+  "Everyone on this bill was told no once." That kind of line, at most once
+  per post, never as a slogan.
+- **The bill:** every RESET night has at least one non-DJ live element
+  (painter, horn, strings, percussion, singer). It is in the caption formula
+  as its own line. That is the visible difference between RESET and every
+  other house night in the city.
+
+### Lines that can go on things
+
+```
+Reset the fear.
+```
+```
+Vision · Freedom · Music
+```
+```
+A stage for the ones who were told no.
+```
+
+---
+
 ## 1. Where the brand stands today
 
 | | Now |
@@ -67,32 +131,34 @@ else is a recommendation you can overrule.
 
 ---
 
-## 2. Positioning (the one decision everything else hangs on)
+## 2. Positioning
 
-**Recommendation: RESET is the collective. "Talents" goes.**
+**Decided 2026-09-26: RESET and RESET Talents are two different things.**
 
-RESET is *the party and the people who throw it*. It moves rooms, it brings a
-sound, it books the lineup. Booking and DJ services still exist, but as a
-line under the brand, not the name of it. Reasons:
+| | RESET | RESET Talents |
+|---|---|---|
+| what | the night. Live painters, live instruments, DJs who love it. | the roster and the services. Booking the same people out to other venues and events. |
+| voice | the party's voice, section 5 | quieter, professional, second person: "for your room" |
+| mark | the eye, lit | the RESET wordmark with `TALENTS` set small beneath it, no eye. The eye belongs to the night. |
+| audience | guests | venue owners, event producers, brands |
 
-- "RESET" is what is on every flyer people have saved. "TALENTS" is only on
-  the profile.
-- LIVE After Dark now exists as a fixed weekly room. RESET should be the thing
-  *above* it: "RESET presents LIVE After Dark" on Saturdays, and RESET
-  one-offs anywhere else. That gives both brands a job and stops them
-  competing for the same followers.
-- A collective can host guests, do takeovers, do a Brazil night and a Fashion
-  Week after party without breaking the brand. An agency cannot.
+Recommendation for the Instagram handle, **still to be decided**: the 2.5K
+followers came for the parties, so `@reset.info.nyc` should be RESET the
+night. RESET Talents gets a line in the bio ("Bookings: RESET Talents, DM"),
+a section on the link page, and its own account only if there is a plan to
+post from it. A roster page on the link site does the job a second account
+would do, without splitting the audience.
 
-One line, for the bio and for your own head:
+One line for each:
 
-> **RESET.** A New York collective throwing rooms around the city.
-> Afro, deep and melodic house, with a live pulse.
+> **RESET.** A New York night that gives the stage to the ones who were told
+> no. Live art, live instruments, house music with a pulse.
 
-**Decide:** RESET (collective) or RESET Talents (agency with events).
-Everything below assumes the first.
+> **RESET Talents.** The RESET roster, bookable. DJs, live painters, horns,
+> strings and percussion for your room or event.
 
----
+**Decide:** which brand owns the handle, and whether RESET Talents posts at
+all.
 
 ## 3. Name, handle and profile
 
@@ -173,6 +239,22 @@ original vector; the original was almost certainly drawn in Illustrator and
 if that `.ai` file turns up it replaces this. Until then the trace is clean
 enough for print at any size.
 
+### Explorations, 2026-09-26
+
+`LOGO/explorations/`, all 1080 on Direction A ground. The drawing is
+untouched in every one; only colour, light and one line change.
+
+| # | what | verdict |
+|---|---|---|
+| 1 | as is, bone on ground | the baseline |
+| 2 | the iris lit in ember | the meaning made visible: vision, switched on |
+| 3 | 2 plus a soft ember glow and film grain | **recommended.** The glow says the eye is a light source, the grain ties it to the After Dark family |
+| 4 | 3 plus `VISION · FREEDOM · MUSIC` beneath | for the hero post and print only; never on the avatar |
+| 5 | 3 with the feathers in sand | warmer, but three colours on one mark is one too many at small size |
+
+The eye-only avatar with the lit iris is cut at 1080, 512 and 180 and holds
+at 72px.
+
 **The wordmark typeface.** Thin, extended, geometric, with the R and S built
 from straight strokes and quarter-circles. It is close to Elianto / Moonhouse
 / Nasalization-family fonts. Worth identifying so that "CHAPTER II",
@@ -210,9 +292,10 @@ grotesk for names. No grain; sharp edges. This one is more distinct from
 LIVE After Dark and more distinct from every other Afro-house promoter in
 the city, but it is a bigger break from what your audience has seen.
 
-**Decide:** A or B. My pick is **A**, because it keeps faith with the
-Brazil-night warmth people came for, and it sits naturally next to LIVE
-After Dark's rose-and-bone without copying it.
+**Decided: A.** It keeps faith with the Brazil-night warmth people came for,
+it fits a night with a saxophone and a painter in the room, and it sits next
+to LIVE After Dark's rose-and-bone without copying it. B is kept in the
+repo as a record only.
 
 ### Rules either way
 
@@ -298,9 +381,10 @@ reel, Saturday stories), which is known to be sustainable.
 
 ## 8. What I need from you
 
-1. **Section 2:** RESET the collective, or RESET Talents the agency.
-2. **Section 4:** direction A or B. `LOGO/previews/` shows the avatar and
-   lockup in both.
+1. ~~Section 2~~ Decided: two brands. Still open: which one owns
+   `@reset.info.nyc`, and whether RESET Talents posts at all.
+2. ~~Section 4~~ Decided: A. Still open: exploration 3 or 4 as the
+   hero lockup, and whether the lit iris is right at all.
 3. ~~The original logo file.~~ Found in Dropbox. If an Illustrator `.ai` or
    `.eps` of the mark exists anywhere, it beats the trace.
 4. **The best footage.** The archive has the 2022 promo videos (Under Jungle,
@@ -310,8 +394,8 @@ reel, Saturday stories), which is known to be sustainable.
 5. **The first night.** A room and a date, even tentative.
 6. **Whether `@resettalents` exists** and is yours.
 
-Answer 1 and 2 and the highlight covers, relaunch post and flyer template
-render the same day.
+Pick an exploration and say who owns the handle, and the highlight covers,
+relaunch post and flyer template render the same day.
 
 ---
 
