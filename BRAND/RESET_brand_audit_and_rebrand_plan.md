@@ -139,15 +139,15 @@ A stage for the ones who were told no.
 |---|---|---|
 | what | the night. Live painters, live instruments, DJs who love it. | the roster and the services. Booking the same people out to other venues and events. |
 | voice | the party's voice, section 5 | quieter, professional, second person: "for your room" |
-| mark | the eye, lit | the RESET wordmark with `TALENTS` set small beneath it, no eye. The eye belongs to the night. |
+| mark | the full logo | the full logo with `TALENTS` set beneath the feathers (`TALENTS/`) |
 | audience | guests | venue owners, event producers, brands |
 
-Recommendation for the Instagram handle, **still to be decided**: the 2.5K
-followers came for the parties, so `@reset.info.nyc` should be RESET the
-night. RESET Talents gets a line in the bio ("Bookings: RESET Talents, DM"),
-a section on the link page, and its own account only if there is a plan to
-post from it. A roster page on the link site does the job a second account
-would do, without splitting the audience.
+**Decided 2026-09-26: Andre owns both and keeps them separate.**
+`@reset.info.nyc` is RESET the night. RESET Talents keeps its own account
+and its own page, with its own version of the mark (`TALENTS/`): the full
+logo, never cropped, with `TALENTS` set beneath the feathers. The night's
+bio still carries one line pointing at Talents for bookings, and the Talents
+bio points back at the night. Two accounts, one family.
 
 One line for each:
 
@@ -157,8 +157,6 @@ One line for each:
 > **RESET Talents.** The RESET roster, bookable. DJs, live painters, horns,
 > strings and percussion for your room or event.
 
-**Decide:** which brand owns the handle, and whether RESET Talents posts at
-all.
 
 ## 3. Name, handle and profile
 
@@ -387,8 +385,8 @@ reel, Saturday stories), which is known to be sustainable.
 
 ## 8. What I need from you
 
-1. ~~Section 2~~ Decided: two brands. Still open: which one owns
-   `@reset.info.nyc`, and whether RESET Talents posts at all.
+1. ~~Section 2~~ Decided: two brands, two accounts, both Andre's.
+   `@reset.info.nyc` is the night.
 2. ~~Section 4~~ Decided: A. Still open: exploration 3 or 4 as the
    hero lockup, and whether the lit iris is right at all.
 3. ~~The original logo file.~~ Found in Dropbox. If an Illustrator `.ai` or
@@ -400,8 +398,8 @@ reel, Saturday stories), which is known to be sustainable.
 5. **The first night.** A room and a date, even tentative.
 6. **Whether `@resettalents` exists** and is yours.
 
-Pick an exploration and say who owns the handle, and the highlight covers,
-relaunch post and flyer template render the same day.
+The highlight covers, relaunch post and flyer template are built. The
+flyer is a placeholder until there is a room and a date.
 
 ---
 
