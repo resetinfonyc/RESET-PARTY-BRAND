@@ -1,8 +1,13 @@
 # RESET — brand audit and rebrand plan
 
 Written 2026-09-26 from the public Instagram (@reset.info.nyc), the last
-eleven reels, the current Partiful link, and the LIVE After Dark repo, which is
-the sibling brand and the working reference for how a room at this scale runs.
+eleven reels, the current Partiful link, the LIVE After Dark repo (the sibling
+brand and the working reference for how a room at this scale runs), and the
+`RESET BRAND PARTY` archive in Dropbox (137 files, 2021–2022).
+
+**Updated the same day** after reading the Dropbox archive. The mark is in
+better shape than the Instagram suggested; see section 4 and the new
+section 9.
 
 Voice of this document: plain. Decisions are marked **decide**; everything
 else is a recommendation you can overrule.
@@ -19,6 +24,7 @@ else is a recommendation you can overrule.
 | Link in bio | a Partiful for someone else's 4th of July 2025 rooftop (Daintree, Vibe Hospitality) |
 | Followers / posts | 2.5K / 150 |
 | Last RESET-branded content | October 2022 ("Unleash", DROM). Last post of any kind April 2023. |
+| History | Starts July 2021 (logo files dated 2021-07-21). Sunset Sundays and Chapter II at the Williamsburg Hotel in October 2021, then 2022 in Manhattan. |
 | Avatar | an AI-generated Afro-pattern collage with "RESET TALENTS" set over it; the eye mark is buried in the middle |
 
 ### What the last three years of posts say the brand is
@@ -143,18 +149,35 @@ Everything below assumes the first.
 
 ### The mark
 
-Keep the eye. Rebuild it as a **monoline** version: one stroke weight, no
-gradients, no sound waves, no seed-of-life fill. The eye reads at 72px; the
-detail did not. Three lockups, same as the LIVE After Dark pack:
+The archive changes the plan here. The original logo is **already a
+monoline mark**: a thin wide-set geometric wordmark, an almond eye with a
+seed-of-life iris, five feathers on beaded strings. It exists as a 5316px
+transparent PNG in black, white and gold, with the layered PSD. It never
+needed a redesign; the Instagram avatar buried it under an AI collage. So:
+keep it exactly, and cut it properly.
 
-| lockup | use |
-|---|---|
-| Eye only | avatar, favicon, wristband, stamp |
-| RESET wordmark over the eye | flyers, stories |
-| RESET wordmark, eye, feathers | print, the hero post, merch |
+Three lockups, now cut and in `LOGO/`:
 
-The feathers stay in the full lockup only. They are the part people
-remember but the part that dies at small size.
+| lockup | file | use |
+|---|---|---|
+| Eye only | `RESET_eye_*` | avatar, favicon, wristband, stamp. Reads at 72px. |
+| Wordmark over eye | `RESET_eye_wordmark_*` | flyers, stories, anywhere under about 400px |
+| Wordmark, eye, feathers | `RESET_full_*` | print, the hero post, merch. The feathers die below ~300px. |
+
+Also `RESET_wordmark_*` alone (for a line of running type) and
+`RESET_eye_feathers_*` (the 2022 flyer treatment, kept for continuity).
+
+**`RESET_lockup.svg`** is a vector trace of the full lockup, 80 paths, fill
+set to `currentColor` so it takes any colour from CSS. It is a trace, not the
+original vector; the original was almost certainly drawn in Illustrator and
+if that `.ai` file turns up it replaces this. Until then the trace is clean
+enough for print at any size.
+
+**The wordmark typeface.** Thin, extended, geometric, with the R and S built
+from straight strokes and quarter-circles. It is close to Elianto / Moonhouse
+/ Nasalization-family fonts. Worth identifying so that "CHAPTER II",
+"PRESENTS" and event titles can be set in the same face (the 2021 flyers did
+this and it held the brand together better than anything since).
 
 ### Two directions to pick from
 
@@ -276,15 +299,45 @@ reel, Saturday stories), which is known to be sustainable.
 ## 8. What I need from you
 
 1. **Section 2:** RESET the collective, or RESET Talents the agency.
-2. **Section 4:** direction A or B.
-3. **The original logo file.** Vector if it exists, otherwise the largest
-   PNG of the eye-and-feathers mark. Without it I rebuild from the flyers,
-   which works but loses detail.
-4. **Any photos or clips from RESET nights** you still have. The 2022 reels
-   are 1080 at best; originals would let me recut them in the new frame.
-5. **The first night.** A room and a date, even tentative. The plan is
-   abstract until there is a flyer to make.
-6. **Whether `@resettalents` exists** and is yours. If it does, it should
-   redirect here or be retired, so there is one RESET on Instagram.
+2. **Section 4:** direction A or B. `LOGO/previews/` shows the avatar and
+   lockup in both.
+3. ~~The original logo file.~~ Found in Dropbox. If an Illustrator `.ai` or
+   `.eps` of the mark exists anywhere, it beats the trace.
+4. **The best footage.** The archive has the 2022 promo videos (Under Jungle,
+   Sound of Brazil, NYFW, Unleash) but they are cut-together promos, not raw
+   clips. If raw phone footage from any night exists, that is what recuts
+   well.
+5. **The first night.** A room and a date, even tentative.
+6. **Whether `@resettalents` exists** and is yours.
 
-Answer 1 and 2 and I can start rendering the same day.
+Answer 1 and 2 and the highlight covers, relaunch post and flyer template
+render the same day.
+
+---
+
+## 9. The Dropbox archive — what is there
+
+`Dropbox / RESET BRAND PARTY`, 5.15 GB, 137 items. Nothing in it is in git;
+this is the map.
+
+| folder / file | what | worth keeping for |
+|---|---|---|
+| `RESET LOGO/` | `RESET NEW .psd` (layered master), PNGs at 5316px in black, white, blue, B&W, gold (`RESET LOGO copy.png`), a metallic wordmark, email signature, Facebook covers | **the source of truth for the mark** |
+| `RESET CHAPTER II/`, `RESET - SUNSET SUNDAY/` | Oct 2021, Williamsburg Hotel. PSDs by "MOK" / Altered Era, RSVP CSV | the first consistent look: wordmark, eye, one typeface throughout |
+| `RESET - SPEAKSOFTLY JULY:9*` | Jul 2022 white party at Speak Softly | the neon-ring flyer, and the LouLou connection |
+| `RESET - SOUND OF BRAZIL*` (3 dates) | Jul–Aug 2022, The Rooftop, Gilded Group. Feed, story, motion MP4s (300 MB each) | the warmest nights; Direction A comes from here |
+| `RESET - UNDER JUNGLE*` | Aug 2022, Selina. PSDs 200–350 MB, promo video, Shotgun QR, `audience_export.csv` | the promo edit is the best video asset in the archive |
+| `RESET - NYFW SEP:9*` | Sep 2022, DROM, Leonardo 5th Ave after party. PSDs, print, story MP4 (370 MB), partner logos | partner logo files (DROM, Shotgun, Front Row) |
+| `RESET - UNLEASH OCT 7TH/` | Oct 2022, DROM, all-female lineup | last RESET flyer; the neon-pink direction |
+| `RESET - NFW/` | a purchased GraphicRiver flyer template and its readme | not brand; ignore |
+| `reset april.mp4`, `reset april 2.mp4` | 137 MB each, identical size | check if these are raw footage |
+| `RESET - WED Memos:*.mp4` | a 14 MB voice memo video | context only |
+| `LEONARDO 5TH/` | W-9 and model payment forms | **personal documents, not brand assets; keep out of git and out of any shared folder** |
+
+Two of the 2022 flyers were built on bought templates (`READ ME.txt` files
+from GraphicRiver sellers are still in the folders). That is part of why each
+night looked different. The rebrand replaces those with one template of our
+own, the same way LIVE After Dark did.
+
+Contact sheets of the original logo files and the 2021–2022 flyers are next
+to this document.

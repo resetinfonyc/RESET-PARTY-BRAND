@@ -12,6 +12,10 @@ repo.
 ```
 BRAND/
   RESET_brand_audit_and_rebrand_plan.md   start here: audit, positioning, identity, relaunch plan
+  *_contact_sheet.jpg                     the original logo files and the 2021–2022 flyers
+LOGO/
+  RESET_lockup.svg, RESET_*_2048.png      the mark, cut into three lockups, bone and black
+  avatars/                                eye-only avatars in both directions
 ```
 
 Sister brand: **LIVE After Dark**, the weekly room at LouLou, Chelsea.
