@@ -27,3 +27,9 @@ after Andre explained what the mark means (eye = vision, feathers = freedom,
 RESET = reset the fear). The drawing is untouched; only colour, light and
 one line change. `RESET_avatar_lit_*` is the eye-only avatar with the iris
 lit in ember. See the brand plan, section 4, for the verdicts.
+
+## final/  and  ../KIT/
+
+`final/` holds exploration 3 as approved on 2026-09-26. `../KIT/` is the
+full-colour kit built from it by `pipeline/build_kit.py`, every platform
+size, and is the thing to use from now on.
