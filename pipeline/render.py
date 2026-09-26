@@ -20,5 +20,9 @@ with sync_playwright() as p:
         pg.goto(f'file://{here}/reset_flyer.html')
         if cls: pg.evaluate(f"document.getElementById('canvas').classList.add('{cls}')")
         pg.wait_for_timeout(300)
+        # measure: the last name line must sit above the footer
+        gap=pg.evaluate("(()=>{const l=document.getElementById('live1').getBoundingClientRect();const f=document.querySelector('.foot').getBoundingClientRect();return Math.round(f.top-l.bottom)})()")
+        print(f'  {name}: gap between lineup and footer = {gap}px')
+        if gap<24: sys.exit(f'LAYOUT COLLISION in {name}: gap {gap}px. Shrink --nameSize or raise --blockTop in reset_flyer.html.')
         f=out/f'reset_{tag}_{name}_{w}x{h}.png'; pg.locator('#canvas').screenshot(path=str(f)); print(f)
     b.close()

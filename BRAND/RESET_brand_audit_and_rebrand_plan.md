@@ -367,21 +367,33 @@ it; it is a one-line edit in `lad8_flyer.html` once you approve.
 
 ---
 
-## 7. Relaunch sequence
+## 7. Relaunch sequence — on real dates
 
-Four weeks. Nothing goes on the grid until week three.
+**First night: AFTERLIFE, RESET × LIVE After Dark, Friday, October 30, 2026.**
+LouLou, behind the Coca-Cola door. Watson, Ricardo, Rhenalt. Costume
+mandatory. Partiful is live. Flyers and captions are in
+`SOCIAL/2026-10-30 AFTERLIFE/`.
 
-| Week | What happens |
+| when | what |
 |---|---|
-| 1 | You decide sections 2 and 4. I rebuild the mark as monoline, bake the three lockups, render avatar, highlight covers and a flyer template in the chosen direction. Profile housekeeping (section 3) happens now, quietly. |
-| 2 | Link page built. Flyer template locked. First night booked: a room and a date. If the first RESET night is at LouLou, it is "RESET presents LIVE After Dark", which is the softest possible relaunch. |
-| 3 | Relaunch post (the mark, the line). Next day, the first flyer. Story every day that week from the archive: the best 2022 clips, re-cut in the new frame. |
-| 4 | The night. Recap reel within 48 hours. Second night announced in the recap caption. |
+| now → Sun Oct 4 | Profile housekeeping, quietly: new avatar, name `RESET · NYC`, bio A, bio link → Partiful, fix the typo, archive the 2023 other-promoter posts. Set the five highlights with their covers. |
+| Tue Oct 6 | **Relaunch post.** The mark and the line. Pin it. |
+| Tue Oct 13 | **Lineup announce**, feed + story with link sticker. Pin it. |
+| Wed Oct 21 | Artist stories, one per name, tagged. |
+| Thu Oct 22 | First reel. |
+| Fri Oct 23 | "One week" story. |
+| Thu Oct 29 | Reel again, day before. |
+| Fri Oct 30 | Morning story, 9PM door story. The night. |
+| Sat Oct 31 | Three clips, no text. |
+| Sun Nov 1 | Recap reel. Next date in the caption. |
 
-After that the cadence is the After Dark calendar (Tuesday announce, Thursday
-reel, Saturday stories), which is known to be sustainable.
+After that the week runs on the After Dark calendar: Tuesday announce,
+Thursday reel, Saturday stories.
 
----
+**The reel does not exist yet.** The archive has the 2022 promo edits but no
+raw footage. Options, in order: shoot 20 seconds of the door and the room
+before Oct 22; or cut the relaunch reel from the Under Jungle promo with the
+new end card. Say which.
 
 ## 8. What I need from you
 
@@ -395,11 +407,10 @@ reel, Saturday stories), which is known to be sustainable.
    Sound of Brazil, NYFW, Unleash) but they are cut-together promos, not raw
    clips. If raw phone footage from any night exists, that is what recuts
    well.
-5. **The first night.** A room and a date, even tentative.
+5. ~~The first night.~~ AFTERLIFE, Friday, October 30.
 6. **Whether `@resettalents` exists** and is yours.
 
-The highlight covers, relaunch post and flyer template are built. The
-flyer is a placeholder until there is a room and a date.
+Everything for October 30 is built except the reel.
 
 ---
 
