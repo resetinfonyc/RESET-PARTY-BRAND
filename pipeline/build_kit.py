@@ -113,8 +113,46 @@ def grain(im, amount=7, seed=1):
     arr += rng.normal(0, amount, arr.shape[:2])[..., None]
     return Image.fromarray(np.clip(arr, 0, 255).astype(np.uint8)).convert('RGBA')
 
-def on_ground(lockup, w, h, scale=.72, dx=0, vignette=True, atmo=False):
-    bg = Image.new('RGBA', (w, h), GROUND + (255,))
+BACKGROUNDS = {
+    'city':  here / 'assets/backgrounds/nyc_night_zac_ong.jpg',
+    'crowd': here / 'assets/backgrounds/crowd_ardian_lumi.jpg',
+    'balls': here / 'assets/backgrounds/mirrorballs_matthew_lejune.jpg',
+    'sax':   here / 'assets/backgrounds/sax_backlit_iggii.jpg',
+}
+_bg_cache = {}
+
+def photo_bg(name, w, h, focus=(0.5, 0.5), dark=0.62):
+    """Cover-crop a brand photo, pull it to the palette, and darken the
+    centre so the mark sits on it. Warm duotone: shadows to ground, lights to
+    ember/amber, a little of the original colour kept."""
+    key = name
+    if key not in _bg_cache:
+        _bg_cache[key] = Image.open(BACKGROUNDS[name]).convert('RGB')
+    src = _bg_cache[key]
+    sw, sh = src.size; sc = max(w / sw, h / sh)
+    im = src.resize((int(sw * sc) + 1, int(sh * sc) + 1), Image.LANCZOS)
+    x0 = int((im.width - w) * focus[0]); y0 = int((im.height - h) * focus[1])
+    im = im.crop((x0, y0, x0 + w, y0 + h))
+    im = im.filter(ImageFilter.GaussianBlur(max(w, h) * 0.0025))
+    arr = np.array(im).astype(np.float32) / 255
+    lum = arr @ np.array([.299, .587, .114])
+    lum = np.clip((lum - 0.05) / 0.9, 0, 1) ** 1.15
+    shadows = np.array(GROUND) / 255; mids = np.array(EMBER) / 255; lights = np.array(AMBER) / 255
+    t = lum[..., None]
+    duo = np.where(t < .5, shadows + (mids - shadows) * (t / .5), mids + (lights - mids) * ((t - .5) / .5))
+    out = duo * 0.78 + arr * 0.22
+    # darken the centre for the mark, keep the edges alive
+    yy_, xx_ = np.mgrid[0:h, 0:w]
+    r = np.sqrt(((xx_ - w / 2) / (w * .5)) ** 2 + ((yy_ - h / 2) / (h * .55)) ** 2)
+    shade = 1 - dark * np.clip(1 - r, 0, 1) ** 1.3
+    out = out * shade[..., None] * 0.92
+    return Image.fromarray(np.clip(out * 255, 0, 255).astype(np.uint8)).convert('RGBA')
+
+def on_ground(lockup, w, h, scale=.72, dx=0, vignette=True, atmo=False, bg=None, ring=False):
+    bg_ = Image.new('RGBA', (w, h), GROUND + (255,)) if bg is None else photo_bg(bg, w, h, dark=0.72 if h >= w else 0.62)
+    if bg is not None:
+        bg_ = grain(bg_, 5)
+    bg = bg_
     if vignette:
         v = Image.new('RGBA', (w, h), (0, 0, 0, 0)); d = ImageDraw.Draw(v)
         rr = int(max(w, h) * .55); d.ellipse((w/2 + dx - rr, h/2 - rr, w/2 + dx + rr, h/2 + rr), fill=EMBER + (40,))
@@ -122,6 +160,13 @@ def on_ground(lockup, w, h, scale=.72, dx=0, vignette=True, atmo=False):
     if atmo:
         bg.alpha_composite(atmosphere(w, h)); bg = grain(bg)
     art = fit_h(lockup, h, scale) if w > h else fit(lockup, w, h, scale)
+    if ring:
+        rg = Image.new('RGBA', (w, h), (0, 0, 0, 0)); d = ImageDraw.Draw(rg); t = max(2, int(w * .012)); m = int(w * .03)
+        d.ellipse((m, m, w - m, w - m), outline=EMBER + (170,), width=t)
+        rg = rg.filter(ImageFilter.GaussianBlur(w * .004)); bg.alpha_composite(rg)
+        # second pass of glow behind the mark so the profile reads lit even at 150px
+        g2 = art.copy(); ga = np.array(g2); ga[..., 3] = (ga[..., 3] * 0.9).astype(np.uint8); g2 = Image.fromarray(ga).filter(ImageFilter.GaussianBlur(w * .02))
+        bg.alpha_composite(g2, (int((w - art.width) / 2 + dx), (h - art.height) // 2))
     bg.alpha_composite(art, (int((w - art.width) / 2 + dx), (h - art.height) // 2))
     return bg.convert('RGB')
 
@@ -140,7 +185,7 @@ def main():
         save(on_ground(L['full'], s, s, .72), f'02_on_ground/RESET_logo_on_ground_{s}.png')
     # 3. avatars, eye only (circle-safe)
     for s in (1080, 800, 720, 512, 400, 320, 200, 180):
-        save(on_ground(L['full'], s, s, .66, vignette=False), f'03_avatars/RESET_avatar_{s}.png')
+        save(on_ground(L['full'], s, s, .64, vignette=False, ring=True), f'03_avatars/RESET_avatar_{s}.png')
     # 4. platform pack
     P = {
         'instagram/profile_1080':          ('full', 1080, 1080, .66, 0),
@@ -172,9 +217,16 @@ def main():
         'web/icon_512':                    ('full', 512, 512, .66, 0),
         'web/icon_192':                    ('full', 192, 192, .66, 0),
     }
+    BG = {'cover': 'city', 'header': 'city', 'banner': 'city', 'event_cover': 'crowd', 'post': 'crowd', 'portrait': 'crowd', 'story': 'crowd', 'og_image': 'city'}
     for rel, (k, w, h, sc, dx) in P.items():
         is_avatar = any(t in rel for t in ('profile', 'avatar', 'icon', 'apple_touch'))
-        save(on_ground(L[k], w, h, sc, dx, vignette=(w == h), atmo=not is_avatar), f'04_platforms/{rel}.png')
+        bgname = next((v for key, v in BG.items() if key in rel.split('/')[-1]), None)
+        save(on_ground(L[k], w, h, sc, dx, vignette=(w == h and bgname is None), atmo=(not is_avatar and bgname is None), bg=bgname, ring=is_avatar and w >= 180), f'04_platforms/{rel}.png')
+    # alternates on the other photos, for covers only
+    for alt in ('balls', 'sax', 'crowd'):
+        for rel in ('facebook/cover_1640x624', 'x/header_1500x500', 'instagram/post_1080x1080'):
+            k, w, h, sc, dx = P[rel]
+            save(on_ground(L[k], w, h, sc, dx, vignette=False, bg=alt), f'04_platforms/_alternates/{rel.replace("/", "_")}_{alt}.png')
     # instagram highlight covers: the logo small, the word beneath, 1080 (IG crops to a circle)
     from PIL import ImageFont
     f = ImageFont.truetype(str(here / 'fonts/DMSans500.ttf'), 46)

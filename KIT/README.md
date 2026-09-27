@@ -36,8 +36,16 @@ two-stage glow, feathers running bone → sand → ember at the tips. Ground is
 | Partiful | `partiful/host_avatar_512`, `event_cover_1200x1200` | host account + standing cover |
 | Web | `web/favicon.ico` (16/32/48), `favicon_*.png`, `apple_touch_180`, `icon_192`, `icon_512`, `og_image_1200x630` | link page |
 
-Covers, banners and posts carry an atmosphere layer: warm bokeh, the room's
-lights out of focus, plus film grain. Profile pictures and favicons stay
+Covers and banners sit on a New York skyline at night; posts, stories and
+event covers sit on a crowd dancing under warm light. Both photos are pulled
+to the palette (shadows to ground, lights to ember and amber), softened and
+darkened behind the mark, with film grain. `04_platforms/_alternates/` has
+the same slots on mirror balls, a backlit saxophone and the crowd, if a
+platform wants a different mood. Photo credits in
+`pipeline/assets/backgrounds/CREDITS.md`.
+
+Profile pictures carry a thin ember ring at the edge of the circle crop and
+a second pass of glow, so the mark reads lit even at 150px. Profile pictures and favicons stay
 clean so the mark reads at small size.
 
 `instagram/highlights/` has a cover for every existing highlight plus NEXT.
