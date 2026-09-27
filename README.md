@@ -10,6 +10,7 @@ the sibling [LIVE After Dark](https://github.com/resetinfonyc/Live-After-Dark-)
 repo.
 
 ```
+PROFILES.md                               Instagram, Facebook, Partiful: what each says now, what to paste
 BRAND/
   RESET_brand_audit_and_rebrand_plan.md   start here: audit, positioning, identity, relaunch plan
   *_contact_sheet.jpg                     the original logo files and the 2021–2022 flyers

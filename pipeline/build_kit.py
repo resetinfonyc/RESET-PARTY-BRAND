@@ -95,12 +95,32 @@ def fit(im, w, h, scale):
 def fit_h(im, h, scale):
     im = im.copy(); im.thumbnail((100000, int(h * scale)), Image.LANCZOS); return im
 
-def on_ground(lockup, w, h, scale=.72, dx=0, vignette=True):
+def atmosphere(w, h, seed=3, density=1.0):
+    """Warm bokeh: out-of-focus room lights, low on the frame, plus grain."""
+    rng = np.random.default_rng(seed)
+    layer_ = Image.new('RGBA', (w, h), (0, 0, 0, 0)); d = ImageDraw.Draw(layer_)
+    n = int(38 * density * (w * h) / (1080 * 1080)) + 8
+    for _ in range(n):
+        rr = int(rng.uniform(.012, .06) * max(w, h)); x = int(rng.uniform(0, w)); y = int(rng.uniform(h * .35, h * 1.05))
+        col = (AMBER if rng.random() < .55 else EMBER) + (int(rng.uniform(40, 110)),)
+        d.ellipse((x - rr, y - rr, x + rr, y + rr), fill=col)
+    layer_ = layer_.filter(ImageFilter.GaussianBlur(max(w, h) * .018))
+    return layer_
+
+def grain(im, amount=7, seed=1):
+    rng = np.random.default_rng(seed)
+    arr = np.array(im.convert('RGB')).astype(np.float32)
+    arr += rng.normal(0, amount, arr.shape[:2])[..., None]
+    return Image.fromarray(np.clip(arr, 0, 255).astype(np.uint8)).convert('RGBA')
+
+def on_ground(lockup, w, h, scale=.72, dx=0, vignette=True, atmo=False):
     bg = Image.new('RGBA', (w, h), GROUND + (255,))
     if vignette:
         v = Image.new('RGBA', (w, h), (0, 0, 0, 0)); d = ImageDraw.Draw(v)
         rr = int(max(w, h) * .55); d.ellipse((w/2 + dx - rr, h/2 - rr, w/2 + dx + rr, h/2 + rr), fill=EMBER + (40,))
         v = v.filter(ImageFilter.GaussianBlur(max(w, h) * .18)); bg.alpha_composite(v)
+    if atmo:
+        bg.alpha_composite(atmosphere(w, h)); bg = grain(bg)
     art = fit_h(lockup, h, scale) if w > h else fit(lockup, w, h, scale)
     bg.alpha_composite(art, (int((w - art.width) / 2 + dx), (h - art.height) // 2))
     return bg.convert('RGB')
@@ -124,10 +144,13 @@ def main():
     # 4. platform pack
     P = {
         'instagram/profile_1080':          ('full', 1080, 1080, .66, 0),
+        'instagram/profile_320':           ('full', 320, 320, .66, 0),
         'instagram/post_1080x1080':        ('full', 1080, 1080, .70, 0),
         'instagram/portrait_1080x1350':    ('full', 1080, 1350, .62, 0),
         'instagram/story_1080x1920':       ('full', 1080, 1920, .66, 0),
         'facebook/profile_720':            ('full', 720, 720, .66, 0),
+        'facebook/profile_180':            ('full', 180, 180, .66, 0),
+        'facebook/cover_820x312':          ('full', 820, 312, .84, 0),
         'facebook/cover_1640x624':         ('full', 1640, 624, .84, 0),
         'facebook/event_cover_1920x1005':  ('full', 1920, 1005, .82, 0),
         'x/profile_400':                   ('full', 400, 400, .66, 0),
@@ -142,6 +165,7 @@ def main():
         'linkedin/profile_400':            ('full', 400, 400, .66, 0),
         'linkedin/cover_1128x191':         ('full', 1128, 191, .84, 150),
         'partiful/host_avatar_512':        ('full', 512, 512, .66, 0),
+        'partiful/profile_banner_1500x500':('full', 1500, 500, .84, 0),
         'partiful/event_cover_1200x1200':  ('full', 1200, 1200, .70, 0),
         'web/og_image_1200x630':           ('full', 1200, 630, .84, 0),
         'web/apple_touch_180':             ('full', 180, 180, .66, 0),
@@ -149,7 +173,18 @@ def main():
         'web/icon_192':                    ('full', 192, 192, .66, 0),
     }
     for rel, (k, w, h, sc, dx) in P.items():
-        save(on_ground(L[k], w, h, sc, dx, vignette=(w == h)), f'04_platforms/{rel}.png')
+        is_avatar = any(t in rel for t in ('profile', 'avatar', 'icon', 'apple_touch'))
+        save(on_ground(L[k], w, h, sc, dx, vignette=(w == h), atmo=not is_avatar), f'04_platforms/{rel}.png')
+    # instagram highlight covers: the logo small, the word beneath, 1080 (IG crops to a circle)
+    from PIL import ImageFont
+    f = ImageFont.truetype(str(here / 'fonts/DMSans500.ttf'), 46)
+    for word in ('NEXT', 'RESET', 'ROOMS', 'SOUND', 'FACES', 'LIVE', 'UNLEASH', 'NYFW', 'UNDER JUNGLE', 'SOUND OF BRAZIL', 'SPEAKEASY', 'CHAPTER II'):
+        im = on_ground(L['full'], 1080, 1080, .46, vignette=False).convert('RGBA')
+        art = fit(L['full'], 1080, 1080, .46); im = Image.new('RGBA', (1080, 1080), GROUND + (255,))
+        im.alpha_composite(art, ((1080 - art.width) // 2, 225)); d = ImageDraw.Draw(im)
+        t = '  '.join(word) if len(word) <= 8 else ' '.join(word); tw = d.textlength(t, font=f)
+        d.text(((1080 - tw) / 2, 790), t, font=f, fill=SAND + (255,))
+        save(im.convert('RGB'), f'04_platforms/instagram/highlights/highlight_{word.replace(" ", "_")}_1080.png')
     # favicons: tighter crop, no glow so it stays crisp
     eye_crisp = render_lockup('full', glow=False)
     for s in (16, 32, 48, 64):

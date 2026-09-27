@@ -36,5 +36,11 @@ two-stage glow, feathers running bone → sand → ember at the tips. Ground is
 | Partiful | `partiful/host_avatar_512`, `event_cover_1200x1200` | host account + standing cover |
 | Web | `web/favicon.ico` (16/32/48), `favicon_*.png`, `apple_touch_180`, `icon_192`, `icon_512`, `og_image_1200x630` | link page |
 
+Covers, banners and posts carry an atmosphere layer: warm bokeh, the room's
+lights out of focus, plus film grain. Profile pictures and favicons stay
+clean so the mark reads at small size.
+
+`instagram/highlights/` has a cover for every existing highlight plus NEXT.
+
 Favicons carry the full logo with no glow so the strokes stay as crisp as
 16px allows. `web/icon_192` and `icon_512` are the ones browsers show most.
