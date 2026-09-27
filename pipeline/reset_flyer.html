@@ -1,0 +1,63 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:DM;src:url(fonts/DMSans400.ttf);font-weight:400}
+@font-face{font-family:DM;src:url(fonts/DMSans500.ttf);font-weight:500}
+:root{
+  --ground:#0B0A08; --bone:#F2EDE8; --ember:#E4572E; --sand:#D9C3A3;
+  --W:1080px; --H:1920px;
+  --pad:96px; --markW:470px; --markTop:190px;
+  --roomSize:30px; --dateSize:64px; --nameSize:58px; --labelSize:22px; --footSize:24px;
+  --blockTop:820px;
+}
+html,body{margin:0;background:var(--ground)}
+.canvas{position:relative;width:var(--W);height:var(--H);overflow:hidden;background:var(--ground);font-family:DM;color:var(--bone)}
+.glow{position:absolute;left:50%;top:calc(var(--markTop) + var(--markW)*0.52);width:900px;height:900px;transform:translate(-50%,-50%);
+  background:radial-gradient(circle,rgba(228,87,46,.28) 0%,rgba(228,87,46,.10) 30%,rgba(228,87,46,0) 62%)}
+.frame{position:absolute;inset:44px;border:1px solid rgba(217,195,163,.55)}
+.mark{position:absolute;left:50%;top:var(--markTop);width:var(--markW);transform:translateX(-50%)}
+.mark img{width:100%;display:block}
+.block{position:absolute;left:var(--pad);right:var(--pad);top:var(--blockTop);bottom:72px;text-align:center;display:flex;flex-direction:column}
+.room{font-weight:500;font-size:var(--roomSize);letter-spacing:.28em;text-transform:uppercase;color:var(--sand)}
+.date{font-weight:400;font-size:var(--dateSize);letter-spacing:.06em;margin-top:26px;text-transform:uppercase}
+.title{font-weight:500;font-size:calc(var(--dateSize)*1.35);letter-spacing:.22em;text-transform:uppercase;margin-top:18px;color:var(--bone)}
+.title.hide{display:none}
+.rule{width:120px;height:1px;background:var(--ember);margin:40px auto}
+.label{font-weight:500;font-size:var(--labelSize);letter-spacing:.42em;text-transform:uppercase;color:var(--sand);margin-bottom:22px}
+.name{font-weight:500;font-size:var(--nameSize);letter-spacing:.14em;text-transform:uppercase;line-height:1.35}
+.live{margin-top:48px}
+.live .name{font-size:calc(var(--nameSize)*.72);letter-spacing:.16em}
+.foot{margin-top:auto;padding-top:36px;text-align:center;font-size:var(--footSize);letter-spacing:.12em;line-height:1.7;text-transform:uppercase}
+.foot b{font-weight:500;color:var(--sand)}
+.grain{position:absolute;inset:0;background:url(assets/grain.png);background-size:512px;opacity:.16;mix-blend-mode:overlay;pointer-events:none}
+/* sizes */
+.feed{--H:1350px;--markTop:70px;--markW:330px;--blockTop:480px;--dateSize:42px;--nameSize:40px;--footSize:19px;--roomSize:24px}
+.feed .rule{margin:24px auto}.feed .live{margin-top:22px}.feed .title{margin-top:10px}
+
+.square{--H:1080px;--markTop:44px;--markW:250px;--blockTop:350px;--dateSize:34px;--nameSize:32px;--roomSize:19px;--footSize:16px;--labelSize:16px}
+.square .rule{margin:22px auto}.square .live{margin-top:20px}.square .label{margin-bottom:10px}.square .foot{padding-top:20px}.square .title{margin-top:8px}
+
+</style></head>
+<body>
+<div class="canvas" id="canvas">
+  <div class="glow"></div>
+  <div class="frame"></div>
+  <div class="mark"><img src="assets/RESET_full_lit_2048.png"></div>
+  <div class="block">
+    <div class="room" id="room">RESET × LIVE AFTER DARK · HALLOWEEN</div>
+    <div class="date" id="date">FRIDAY, OCTOBER 30</div>
+    <div class="title" id="title">AFTERLIFE</div>
+    <div class="rule"></div>
+    <div class="label">Music by</div>
+    <div class="name" id="act1">WATSON</div>
+    <div class="name" id="act2">RICARDO</div>
+    <div class="name" id="act3">RHENALT</div>
+    <div class="live">
+      <div class="label" id="live_label">The rule</div>
+      <div class="name" id="live1">COSTUME MANDATORY</div>
+    </div>
+    <div class="foot" id="foot"><b>Doors 10:30PM</b> · 8th Avenue, Chelsea<br>Pull the Coca-Cola door · RSVP in bio</div>
+  </div>
+  <div class="grain"></div>
+</div>
+</body></html>
